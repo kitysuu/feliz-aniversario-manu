@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎀 Feliz Aniversário 🎀</title>
+
+  <!-- Adicionando o favicon -->
+  <link rel="icon" href="hk capa.png" type="image/x-icon" />
+
+  <style>
+    :root {
+    --rosa-claro: #b4a0a6; /* Alterado para um rosa bem claro, quase branco */
+    --rosa-forte: #ff9ac1;
+    --rosa-escuro: #ff5c9e;
+    --branco: #fff;
+    --sombra: 0 8px 24px rgba(0, 0, 0, 0.12);
+    font-family: 'Poppins', sans-serif;
+  }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: linear-gradient(180deg, var(--rosa-claro), var(--branco));
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card {
+      background: var(--branco);
+      border-radius: 24px;
+      box-shadow: var(--sombra);
+      padding: 32px;
+      text-align: center;
+      width: 90%;
+      max-width: 900px;
+      transition: all 0.5s ease;
+    }
+
+    h1 {
+      color: var(--rosa-escuro);
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+
+    p {
+      color: #555;
+      margin-bottom: 24px;
+    }
+
+    .imagens {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .imagens img {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 0px;
+      box-shadow: var(--sombra);
+    }
+
+    .play-btn {
+      background: linear-gradient(90deg, var(--rosa-forte), var(--rosa-escuro));
+      border: none;
+      color: var(--branco);
+      font-weight: bold;
+      padding: 16px 32px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 1rem;
+      box-shadow: 0 8px 18px rgba(255, 92, 158, 0.24);
+      transition: 0.2s ease;
+    }
+
+    .play-btn:hover {
+      transform: scale(1.05);
+    }
+
+    /* Segunda página */
+    .recados-container {
+      display: none;
+      flex-direction: row;
+      gap: 20px;
+      align-items: flex-start;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .recado {
+      background: linear-gradient(180deg, #fff, var(--rosa-claro));
+      border-radius: 16px;
+      box-shadow: var(--sombra);
+      padding: 16px;
+      width: 250px;
+      text-align: center;
+    }
+
+    .recado img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 12px;
+    }
+
+    .recado h3 {
+      color: var(--rosa-escuro);
+      margin-bottom: 6px;
+    }
+
+    .recado p {
+      color: #444;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 1.8rem; }
+      .imagens img { width: 120px; height: 120px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PÁGINA 1 -->
+  <div class="card" id="tela1">
+    <h1> Feliz Aniversário </h1>
+    <p>Algo simples, espero que goste (prepara para ajustar o som, talvez esteja alto)</p>
+
+    <div class="imagens">
+      <!-- Substitua as imagens por suas próprias -->
+      <img src="HK.png" alt="Hello Kitty 1">
+      <img src="Chococat-1.png" alt="Hello Kitty 2">
+      <img src="Kuromi.png" alt="Hello Kitty 3">
+    </div>
+
+    <button class="play-btn" id="playBtn">Pronto?</button>
+  </div>
+
+  <!-- PÁGINA 2 -->
+  <div class="card recados-container" id="tela2">
+    <div class="recado">
+      <img src="gato1.png" alt="Foto recado 1">
+      <h3>Feliz aniversário!</h3>
+      <p>Parabéns!! Tudo de bom para você, espero que esteja bem, e que tudo também esteja indo bem, parabéns pelos 16 anos!!  </p>
+      <p>Sou bem ruim com textos... Mas.. </p>
+    </div>
+
+    <div class="recado">
+      <img src="gato2.png" alt="Foto recado 2">
+      <h3>Você!!</h3>
+      <p>Bom.. adoro seu jeitinho de sorrir quando a gente se fala de vez em quando hsuahsua, tem vezes que eu fico muito receoso de chegar pra conversar contigo, tipo no acamtropas.. (SEILA O PQ)</p>
+      <p>Fim de trimestre eu to bem corrido, então acabo não conversando muito, mas saiba que pra mim você é muito importante e especial, conte comigo se precisar de algo, que eu arranjo tempo para responderkkkkkkk</p>
+    </div>
+
+    <div class="recado">
+      <img src="gato3.png" alt="Foto recado 3">
+      <h3>Cabo..</h3>
+      <p>Não estou muito avançado ainda para sites mais complexos, mas espero que tenha gostado!
+        Já que não te vejo sempre para dar algum presente, fiz isto como lembraça, não sei muito sobre seus gostos, então fiz algo bem genérico no temakkkkkk É isso, tentei fazer um botão de finalizar, mas não consegui, então só fecha a aba mesmkk
+      </p>
+    </div>
+  </div>
+
+  <!-- Adicionando o elemento de áudio -->
+  <audio id="musica" src="blue-soda.mp3"></audio>
+
+  <script>
+    const playBtn = document.getElementById("playBtn");
+    const tela1 = document.getElementById("tela1");
+    const tela2 = document.getElementById("tela2");
+    const musica = document.getElementById("musica");
+
+    // Definir o volume da música para um nível baixo
+  musica.volume = 0.1;
+
+    playBtn.addEventListener("click", () => {
+      // Tocar a música
+      musica.play();
+
+      // Trocar para a segunda tela
+      setTimeout(() => {
+        tela1.style.display = "none";
+        tela2.style.display = "flex";
+      }, 600);
+    });
+  </script>
+
+</body>
+</html>
